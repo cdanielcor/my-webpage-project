@@ -27,13 +27,16 @@ h1, h2, h3 {
 
 section h4 {
     color : #eaeaea;
-    width: 100%;
+    width: 100%;                  /*I need to find how to keep one line in the android phones*/
+    text-align: center;
+    height: auto;
     background-color: #333;
-    padding: 10px 10px 10px 10px;
+    padding: 1%;
     inline-size: max-content;
+    border: 5px;
     border-radius: 5px;
     margin: 30px 10px -10px 10px;
-    border-style: solid;
+    border-style: double;
     
 }
 
