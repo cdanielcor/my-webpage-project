@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Best Wishes</title>
+
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: Center;
+            justify-content: Center
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <script>
+        let seconds = 5; // tiempo total de cuenta regresiva en segundos
+
+        function updateCountdown() {
+            document.getElementById("countdown").textContent = `Closing in ${seconds} seconds...`;
+            seconds--;
+            if (seconds >= 0) {
+                setTimeout(updateCountdown, 1000);
+            } else {
+                window.close();
+            }
+        }
+
+        window.onload = updateCountdown;
+    </script>
+
+</head>
+<body>
+    <h1>Have A Wonderful Day!</h1>   
+    <p><span id="countdown"></span></p>
+    <p>Thank you for visiting my webpage!</p>
+</body>
+</html> 
