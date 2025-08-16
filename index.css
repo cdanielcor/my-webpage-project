@@ -33,12 +33,12 @@ section h4 {
     text-align: center;
     height: auto;
     background-color: #333;
-    padding: 1%;
+    padding: 6px;
     inline-size: max-content;
-    border-style: 5px double;
     margin: 30px 10px -10px 10px;
     box-sizing: border-box;
     border-radius: 5px;
+    border-style: double;
     
 }
 
