@@ -23,7 +23,7 @@ app.post('/comments', (req, res) => {
     fs.readFile(COMMENTS_FILE, 'utf8', (err, data) => {
         let comments = [];
         if (!err) comments = JSON.parse(data);
-        comments.push({ name || "Anonymous", text, date: new Date().toISOString() });
+        comments.push({ text, date: new Date().toISOString() });
         fs.writeFile(COMMENTS_FILE, JSON.stringify(comments, null, 2), err => {
             if (err) return res.status(500).json({ error: 'Error when saving' });
             res.json({ success: true });
