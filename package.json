@@ -8,5 +8,12 @@
   },
   "devDependencies": {
     "typescript": "^5.0.0"
+  },
+  "description": "This is a simple Hello World project written in TypeScript.",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }

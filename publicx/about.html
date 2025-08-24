@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="utf-8">
+    <title>About Me</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        #comments { margin-top: 20px; }
+        .comment { border-bottom: 1px solid #ccc; padding: 5px 0; }
+</style>
+</head>
+
+<body>
+        <header>
+            <h1>
+            About Me
+            </h1>
+            <h2>
+            Navigational Links
+            </h2>
+            <nav>
+                <h3>
+                <a href="index.html">Home</a> |
+                <a href="gallery/gallery.html">Gallery</a> |
+                <a href="hobbies/hobbies.html">Hobbies</a> |
+                </h3>
+            </nav>
+        </header>
+
+
+<main>
+    <section>
+    <h2>More Than My Resume</h2>
+    <p>Hi, I'm <strong>Carlos Daniel Coronel Rodriguez</strong>, a passionate software development enthusiast with foundations in C, C++, Pascal, MATLAB, and LabVIEW from my academic background. Additionally, I've gained practical experience with Visual Basic and SQL through freelance projects during my college years.</p>
+    <p>My journey into <em>software engineering</em> is also driven by a deep curiosity for data, how it moves, how it tells stories, and how it powers decisions. I'm gradually exploring data science tools like Python, Pandas, NumPy, Matplotlib and learning libraries used in data science workflows as I build more projects. Over time, I hope to contribute to projects where data and software come together whether in dashboards, analysis tools, or machine learning pipelines.</p>
+    <p>This site was built to showcase my learning and use of multiple core web technologies such as HTML, CSS, JavaScript, and GitHub Pages. I'm also exploring Python, React, APIs, and backend tools to grow as a full-stack developer. Thank you for exploring it, and feel free to check out the source code or get in touch.</p>
+    </section>
+</main>
+<!--
+    To do: A table with information about the languages and the
+    code editors/IDE's I used while learning these technologies.
+-->
+
+<!--React component for image carousel of certificates-->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function App() {
+            const [index, setIndex] = React.useState(0);
+            const images = [
+                "./certificates/angular.jpg",
+                "./certificates/c.jpg",
+                "./certificates/c++.jpg",
+                "./certificates/cloud.jpg",
+                "./certificates/csh.jpg",
+                "./certificates/css.jpg",
+                "./certificates/git.jpg",
+                "./certificates/html.jpg",
+                "./certificates/java.jpg",
+                "./certificates/js.jpg",
+                "./certificates/jsa.jpg",
+                "./certificates/node.jpg",
+                "./certificates/react1.jpg",
+                "./certificates/react2.jpg",
+                "./certificates/react3.jpg",
+                "./certificates/react4.jpg",
+                "./certificates/rest.jpg",
+                "./certificates/ruby.jpg",
+                "./certificates/spring1.jpg",
+                "./certificates/spring2.jpg",
+                "./certificates/spring3.jpg",
+                "./certificates/sql.jpg",
+            ];
+
+            const nextImage = () => setIndex((index + 1) % images.length);
+            const prevImage = () =>
+                setIndex((index - 1 + images.length) % images.length);
+
+            return (
+                <div style={{ textAlign: "center", marginTop: "40px" }}>
+                    <h2>My Certificates</h2>
+
+                    <img
+                        src={images[index]}
+                        alt={`Imagen ${index + 1}`}
+                        style={{ width: "800px", height: "620px", borderRadius: "10px", objectFit: "cover", }}
+                    />
+
+                    <p style={{ margin: "10px 0", fontWeight: "bold" }}>
+                        Image {index + 1} of {images.length}
+                    </p>
+
+                    <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginTop: "10px" }}>
+                        <button onClick={prevImage}
+                        style={{
+                            padding: "8px 16px",
+                            borderRadius: "6px",
+                            border: "1px solid #333",
+                            cursor: "pointer",
+                        }}
+                        >Previous</button>
+                        <button onClick={nextImage}
+                        style={{
+                            padding: "8px 16px",
+                            borderRadius: "6px",
+                            border: "1px solid #333",
+                            cursor: "pointer",
+                        }}
+                            >Next</button>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+
+<!--Comment box-->
+<h2>Comments</h2>
+<input type="text" id="name" placeholder="Your name" />
+<br><br>
+<textarea id="text" placeholder="Please leave advice or comments for personal development improvement."></textarea>
+<br><br>
+<button onclick="submitComment()">Send</button>
+
+<div id="comments"></div>
+
+<script src="comments-frontend.js"></script>
+
+</body>
+
+
+</html>
