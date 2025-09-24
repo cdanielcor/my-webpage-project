@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="Tools.css">
 </head>
 <body>
         <header>
@@ -25,9 +26,213 @@
 
 
 <main>
+
+    <br>
     <section>
-    <h2>Under development</h2>
-    <p>This section is still under development. I am working hard to bring a collection of coding projects in diverse programming languages. Thank you for your patience and understanding. Please check back later for updates.</p>
+    <h2>Code Samples and Project Snapshots</h2>
+    <p>This section highlights my exploration of different programming languages and tools. Here, I present small projects, code snippets, and visual representations that demonstrate my ability to learn, adapt, and apply programming concepts across multiple technologies. Each example is designed to reflect both technical knowledge and problem-solving skills.</p>
+
+    <br>
+    <br>
+    
+    <article>
+        <h3>SQL</h3>
+        <p>This is a hands on exercise I designed to practice the fundamentals of relational databases in MySQL. My goal was to create two connected tables and type various SQL queries to retrieve and analyze the data. I created a languages table and a products table to explore how programming languages relate to the applications built with them. The focus was on practicing CRUD operations and, most importantly, mastering different JOIN clauses to connect the data.</p>
+        <a href="sql-code/sql-code.html"><img src="sql-code/sql.png" alt="SQL code" width="475" height="250"></a>
+    </article>
+    
+    <br>
+    <br>
+
+    <article>
+        <h3>Java, Python, C++, C#, Ruby</h3>
+        <p>This code (in different languages) is a basic project about a simple bank account and a couple of typical transactions. The best practice is to separate main and class in different files, but for simplifying purposes the code is shown together.</p>
+    </article>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>JAVA</th>
+                <th>PYTHON</th>
+                <th>C++</th>
+                <th>C#</th>
+                <th>RUBY</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+<td>   <!-- Begining of java code-->
+class BankAccount {<br>
+    private String owner;<br>
+    private double balance;<br>
+<br>
+    public BankAccount(String owner, double balance) {<br>
+        this.owner = owner;<br>
+        this.balance = balance;<br>
+    }<br>
+<br>
+    public void deposit(double amount) {<br>
+        balance += amount;<br>
+        System.out.println("Successful deposit.");<br>
+    }<br>
+<br>
+    public void withdraw(double amount) {<br>
+        if (balance >= amount) {<br>
+            balance -= amount;<br>
+        } else {<br>
+            System.out.println("Insufficient funds.");<br>
+        }<br>
+    }<br>
+<br>
+    public void display() {<br>
+        System.out.println(owner + "'s balance: $" + balance);<br>
+    }<br>
+<br>
+    public static void main(String[] args) {<br>
+        BankAccount acc = new BankAccount("Carlos", 1000);<br>
+        acc.deposit(200);<br>
+        acc.withdraw(1500);<br>
+        acc.display();<br>
+    }<br>
+}<br>
+</td>
+<td>   <!-- Begining of python code-->
+class BankAccount:<br>
+    def __init__(self, owner, balance):<br>
+        self.owner = owner<br>
+        self.balance = balance<br>
+<br>
+    def deposit(self, amount):<br>
+        self.balance += amount<br>
+        print("Successful deposit.")<br>
+<br>
+    def withdraw(self, amount):<br>
+        if self.balance >= amount:<br>
+            self.balance -= amount<br>
+        else:<br>
+            print("Insufficient funds.")<br>
+<br>
+    def display(self):<br>
+        print(f"{self.owner}'s balance: ${self.balance}")<br>
+<br>
+<br>
+account = BankAccount("Carlos", 1000)<br>
+account.deposit(200)<br>
+account.withdraw(1500)<br>
+account.display()<br>
+</td>
+<td>   <!-- Begining of c++ code-->
+ #include <iostream><br>
+using namespace std;<br>
+<br>
+class BankAccount {<br>
+private:<br>
+    string owner;<br>
+    double balance;<br>
+<br>
+public:<br>
+    BankAccount(string owner, double balance) {<br>
+        this->owner = owner;<br>
+        this->balance = balance;<br>
+    }<br>
+<br>
+    void deposit(double amount) {<br>
+        balance += amount;<br>
+        cout << "Successful deposit." << endl;<br>
+    }<br>
+<br>
+    void withdraw(double amount) {<br>
+        if (balance >= amount) {<br>
+            balance -= amount;<br>
+        } else {<br>
+            cout << "Insufficient funds." << endl;<br>
+        }<br>
+    }<br>
+<br>
+    void display() {<br>
+        cout << owner << "'s balance: $" << balance << endl;<br>
+    }<br>
+};<br>
+<br>
+int main() {<br>
+    BankAccount acc("Carlos", 1000);<br>
+    acc.deposit(200);<br>
+    acc.withdraw(1500);<br>
+    acc.display();<br>
+    return 0;<br>
+}<br>
+</td>
+<td>   <!-- Begining of c# code-->
+using System;<br>
+<br>
+class BankAccount {<br>
+    private string owner;<br>
+    private double balance;<br>
+<br>
+    public BankAccount(string owner, double balance) {<br>
+        this.owner = owner;<br>
+        this.balance = balance;<br>
+    }<br>
+<br>
+    public void Deposit(double amount) {<br>
+        balance += amount;<br>
+        Console.WriteLine("Successful deposit.");<br>
+    }<br>
+<br>
+    public void Withdraw(double amount) {<br>
+        if (balance >= amount) {<br>
+            balance -= amount;<br>
+        } else {<br>
+            Console.WriteLine("Insufficient funds.");<br>
+        }<br>
+    }<br>
+<br>
+    public void Display() {<br>
+        Console.WriteLine($"{owner}'s balance: ${balance}");<br>
+    }<br>
+<br>
+    static void Main(string[] args) {<br>
+        BankAccount acc = new BankAccount("Carlos", 1000);<br>
+        acc.Deposit(200);<br>
+        acc.Withdraw(1500);<br>
+        acc.Display();<br>
+    }<br>
+}<br>
+</td>
+<td>   <!-- Begining of ruby code-->
+class BankAccount<br>
+    def initialize(owner, balance)<br>
+        @owner = owner<br>
+        @balance = balance<br>
+    end<br>
+<br>
+    def deposit(amount)<br>
+        @balance += amount<br>
+        puts "Successful deposit."<br>
+    end<br>
+<br>
+    def withdraw(amount)<br>
+        if @balance >= amount<br>
+            @balance -= amount<br>
+        else<br>
+            puts "Insufficient funds."<br>
+        end<br>
+    end<br>
+<br>
+    def display<br>
+        puts "#{@owner}'s balance: $#{@balance}"<br>
+    end<br>
+end<br>
+<br>
+account = BankAccount.new("Carlos", 1000)<br>
+account.deposit(200)<br>
+account.withdraw(1500)<br>
+account.display<br>
+</td>
+        </tr>
+        </tbody>
+    </table>
+
     </section>
 </main>
 </html>
